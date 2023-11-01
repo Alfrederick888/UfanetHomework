@@ -7,11 +7,11 @@ def compress(text: str) -> str:
     # Инициализация словаря символами ASCII
     dictionary = {chr(i): i for i in range(256)}
     # Следующий доступный код
-    current_code = 256
+    current_code: int = 256
     # Результат сжатия данных
-    result = []
+    result: list = []
     # Текущая последовательность символов
-    current_sequence = ""
+    current_sequence: str = ""
 
     # Итерируем исходный текст
     for symbol in text:
@@ -45,11 +45,11 @@ def decompress(text: str) -> str:
     # Инициализация словаря символами ASCII
     dictionary = {i: chr(i) for i in range(256)}
     # Следующий доступный код
-    current_code = 256
+    current_code: int = 256
     # Первый символ в распакованной последовательности
-    previous_sequence = chr(text[0])
+    previous_sequence: str = chr(text[0])
     # Добавляем первый символ в результирующий список
-    result = list(previous_sequence)
+    result: list = list(previous_sequence)
 
     # Итерируем заархивированные входные данные
     for code in text[1:]:
@@ -70,3 +70,7 @@ def decompress(text: str) -> str:
 
     # Возвращаем результат в виде строки
     return ''.join(result)
+
+
+data = '97 97 98 257 256 99 97 99 100 102 102 98 102'
+print(decompress(data))
