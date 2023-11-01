@@ -70,7 +70,3 @@ def decompress(text: str) -> str:
 
     # Возвращаем результат в виде строки
     return ''.join(result)
-
-
-data = '97 97 98 257 256 99 97 99 100 102 102 98 102'
-print(decompress(data))
